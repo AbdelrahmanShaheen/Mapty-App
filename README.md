@@ -15,13 +15,13 @@ A map Application where the goal is to organize and track your workouts(running 
 - The user can delete a specific workout.
 - The user can delete all the workouts.
 
-# App Architecture:
+# App Architecture
 ![Mapty-architecture-final](https://user-images.githubusercontent.com/77184432/176511402-d259e32f-c85b-410d-bd74-52c53c56d45a.png)
 
-# Flowchart Diagram:
+# Flowchart Diagram
 ![Mapty-flowchart](https://user-images.githubusercontent.com/77184432/176511759-52c526f3-3c4d-4ed8-9ab9-eb164bf5c0b8.png)
 
-# App Screenshots:
+# App Screenshots
 1. 
 ![Screenshot -1](https://user-images.githubusercontent.com/77184432/176511938-9483b927-ae3f-46fd-86c1-b98e37445ec8.png)
 2. 
@@ -30,10 +30,10 @@ A map Application where the goal is to organize and track your workouts(running 
 ## Deployment/Live Demo
 Deployed Website: [Mapty-workout-tracker](https://mapty-workout-tracker1.netlify.app/)
 
-## Screen record :
+## Screen record
 [Mapty-workout-tracker](https://www.youtube.com/watch?v=v79wDGakkZo)
 
 ## Note
 Not mobile friendly.
-## Future Feauters:
+## Future Feauters
 Make the app responsive.
