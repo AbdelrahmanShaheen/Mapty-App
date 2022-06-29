@@ -32,3 +32,7 @@ Deployed Website: [Mapty-workout-tracker](https://mapty-workout-tracker1.netlify
 
 # Screen record :
 [Mapty-workout-tracker](https://www.youtube.com/watch?v=v79wDGakkZo)
+
+## Note
+Not mobile friendly.
+
