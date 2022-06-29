@@ -14,3 +14,6 @@ A map Application where the goal is to organize and track your workouts(running 
 - All the workouts information will be saved in the localstorage so that application will not lose its state in case browser is loaded. 
 - The user can delete a specific workout.
 - The user can delete all the workouts.
+
+# App Architecture:
+![Mapty-architecture-final](https://user-images.githubusercontent.com/77184432/176511402-d259e32f-c85b-410d-bd74-52c53c56d45a.png)
