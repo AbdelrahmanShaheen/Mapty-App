@@ -2,8 +2,8 @@
 A map Application where the goal is to organize and track your workouts(running or cycling), This application is built using Advanced Javascript with Object-Oriented Programming which uses Geolocation APIs, Browser APIs along with some External libraries.
 
 # Feauters in the APP
-- Render a map leaflet API.
-- The map is rendered on the user's current position using Real time geolocation API.
+- Render a map using ** leaflet API **.
+- The map is rendered on the user's current position using ** Real time geolocation API **.
 - Ability to log a workout(Running or Cycling) to specific location.
 - Ability to log a workout(Running or Cycling) to specific location.
 - If running workout then user can set his/her workout distance, duration, cadence ,then application check the data validation and calculate the pace.
