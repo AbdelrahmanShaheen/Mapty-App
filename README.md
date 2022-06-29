@@ -12,3 +12,5 @@ A map Application where the goal is to organize and track your workouts(running 
 - A Map marker will also set on the map for specific workout with date and workout type.
 - User can click on a workout in the list to move to the workout on the map.
 - All the workouts information will be saved in the localstorage so that application will not lose its state in case browser is loaded. 
+- The user can delete a specific workout.
+- The user can delete all the workouts.
