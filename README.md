@@ -27,12 +27,13 @@ A map Application where the goal is to organize and track your workouts(running 
 2. 
 ![Screenshot -2](https://user-images.githubusercontent.com/77184432/176512118-3458932d-cd60-4daa-aae9-cba7e69a24e9.png)
 
-# Deployment
+## Deployment
 Deployed Website: [Mapty-workout-tracker](https://mapty-workout-tracker1.netlify.app/)
 
-# Screen record :
+## Screen record :
 [Mapty-workout-tracker](https://www.youtube.com/watch?v=v79wDGakkZo)
 
 ## Note
 Not mobile friendly.
-
+## Future Feauters:
+Make the app responsive.
