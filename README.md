@@ -22,6 +22,8 @@ A map Application where the goal is to organize and track your workouts(running 
 ![Mapty-flowchart](https://user-images.githubusercontent.com/77184432/176511759-52c526f3-3c4d-4ed8-9ab9-eb164bf5c0b8.png)
 
 # App Screenshots:
-1. ![Screenshot -1](https://user-images.githubusercontent.com/77184432/176511938-9483b927-ae3f-46fd-86c1-b98e37445ec8.png)
-2. ![Screenshot -2](https://user-images.githubusercontent.com/77184432/176512118-3458932d-cd60-4daa-aae9-cba7e69a24e9.png)
+1. 
+![Screenshot -1](https://user-images.githubusercontent.com/77184432/176511938-9483b927-ae3f-46fd-86c1-b98e37445ec8.png)
+2. 
+![Screenshot -2](https://user-images.githubusercontent.com/77184432/176512118-3458932d-cd60-4daa-aae9-cba7e69a24e9.png)
 
