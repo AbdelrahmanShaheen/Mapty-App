@@ -1,53 +1,6 @@
 'use strict';
-
-class Workout {
-  id = uuid.v4();
-  date = new Date();
-  description;
-  clicks = 0;
-  constructor(distance, duration, coords) {
-    this.distance = distance; //km
-    this.duration = duration; //min
-    this.coords = coords; // [lat ,long]
-  }
-  _setDescriprion() {
-    // prettier-ignore
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    this.description = `${this.type[0].toUpperCase()}${this.type.slice(1)} on ${
-      months[this.date.getMonth()]
-    } ${this.date.getDate()}`;
-  }
-}
-class Running extends Workout {
-  type = 'running';
-  constructor(distance, duration, coords, cadence) {
-    super(distance, duration, coords);
-    this.cadence = cadence; // step/min
-    this._clacPace();
-    this._setDescriprion();
-  }
-  _clacPace() {
-    /* pace is simply a measurement where you answer the question how long it takes to cover particular distance and it is used for running
-     */
-    // min/km
-    this.pace = this.duration / this.distance;
-    return this.pace;
-  }
-}
-class Cycling extends Workout {
-  type = 'cycling';
-  constructor(distance, duration, coords, elevationGain) {
-    super(distance, duration, coords);
-    this.elevationGain = elevationGain; // meters
-    this._calcSpeed();
-    this._setDescriprion();
-  }
-  _calcSpeed() {
-    // km/h
-    this.speed = this.distance / (this.duration / 60);
-    return this.speed;
-  }
-}
+import { Running } from './Running.js';
+import { Cycling } from './Cycling.js';
 ///////////////////////////
 // APPLICATION ARCHITECTURE
 const form = document.querySelector('.form');
@@ -116,7 +69,6 @@ class App {
   _renderWorkoutMarker(workout) {
     const marker = L.marker(workout.coords);
     this.#markers.push(marker);
-    console.log(marker);
 
     marker
       .addTo(this.#map)
@@ -133,9 +85,7 @@ class App {
       .openPopup();
   }
   _moveToPopup(event) {
-    console.log(event.target);
     const workoutEl = event.target.closest('.workout');
-    console.log(workoutEl);
     if (!workoutEl) return;
     const id = workoutEl.dataset.id;
     const workoutObj = this.#workouts.find(workout => workout.id === id);
