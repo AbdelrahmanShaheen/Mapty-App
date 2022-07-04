@@ -45,5 +45,3 @@ Not mobile friendly.
 ## Future Feauters
 
 Make the app responsive.
-
-> > > > > > > 0fd5884d1d66320dcc8196fc1a3a0819305f02d2
