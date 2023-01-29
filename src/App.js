@@ -1,16 +1,16 @@
-'use strict';
-import { Running } from './Running.js';
-import { Cycling } from './Cycling.js';
+"use strict";
+import { Running } from "./workout/Running.js";
+import { Cycling } from "./workout/Cycling.js";
 ///////////////////////////
 // APPLICATION ARCHITECTURE
-const form = document.querySelector('.form');
-const containerWorkouts = document.querySelector('.workouts');
-const inputType = document.querySelector('.form__input--type');
-const inputDistance = document.querySelector('.form__input--distance');
-const inputDuration = document.querySelector('.form__input--duration');
-const inputCadence = document.querySelector('.form__input--cadence');
-const inputElevation = document.querySelector('.form__input--elevation');
-const inputReset = document.querySelector('.btn--clear-all');
+const form = document.querySelector(".form");
+const containerWorkouts = document.querySelector(".workouts");
+const inputType = document.querySelector(".form__input--type");
+const inputDistance = document.querySelector(".form__input--distance");
+const inputDuration = document.querySelector(".form__input--duration");
+const inputCadence = document.querySelector(".form__input--cadence");
+const inputElevation = document.querySelector(".form__input--elevation");
+const inputReset = document.querySelector(".btn--clear-all");
 
 class App {
   #map;
@@ -24,46 +24,46 @@ class App {
     // Get data from local storage
     this._getLocalStorage();
     // Attach event handlers
-    inputType.addEventListener('change', this._toggleElevationField);
-    form.addEventListener('submit', this._newWorkout.bind(this));
-    containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
-    inputReset.addEventListener('click', this.resetLocalStorage.bind(this));
+    inputType.addEventListener("change", this._toggleElevationField);
+    form.addEventListener("submit", this._newWorkout.bind(this));
+    containerWorkouts.addEventListener("click", this._moveToPopup.bind(this));
+    inputReset.addEventListener("click", this.resetLocalStorage.bind(this));
   }
   _getPosition() {
     navigator.geolocation.getCurrentPosition(
       this._loadMap.bind(this),
       function () {
-        console.log('Error!');
+        console.log("Error!");
       }
     );
   }
   _loadMap(position) {
     const { latitude, longitude } = position.coords;
     const coords = [latitude, longitude];
-    this.#map = L.map('map').setView(coords, this.#mapZoomLevel);
+    this.#map = L.map("map").setView(coords, this.#mapZoomLevel);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(this.#map);
     // Handling clicks on map
-    this.#map.on('click', this._showForm.bind(this));
+    this.#map.on("click", this._showForm.bind(this));
     // Render each workout in the map as marker
-    this.#workouts.forEach(workout => this._renderWorkoutMarker(workout));
+    this.#workouts.forEach((workout) => this._renderWorkoutMarker(workout));
   }
   _showForm(mapEvent_) {
     this.#mapEvent = mapEvent_;
-    form.classList.remove('hidden');
+    form.classList.remove("hidden");
     inputDistance.focus();
   }
   _hideForm() {
-    form.style.display = 'none';
-    form.classList.add('hidden');
-    setTimeout(() => (form.style.display = 'grid'), 1000);
+    form.style.display = "none";
+    form.classList.add("hidden");
+    setTimeout(() => (form.style.display = "grid"), 1000);
   }
   _toggleElevationField() {
-    inputCadence.parentElement.classList.toggle('form__row--hidden');
-    inputElevation.parentElement.classList.toggle('form__row--hidden');
+    inputCadence.parentElement.classList.toggle("form__row--hidden");
+    inputElevation.parentElement.classList.toggle("form__row--hidden");
   }
 
   _renderWorkoutMarker(workout) {
@@ -85,11 +85,11 @@ class App {
       .openPopup();
   }
   _moveToPopup(event) {
-    const workoutEl = event.target.closest('.workout');
+    const workoutEl = event.target.closest(".workout");
     if (!workoutEl) return;
     const id = workoutEl.dataset.id;
-    const workoutObj = this.#workouts.find(workout => workout.id === id);
-    if (event.target.classList.contains('workout__delete')) {
+    const workoutObj = this.#workouts.find((workout) => workout.id === id);
+    if (event.target.classList.contains("workout__delete")) {
       this._deleteWorkout(id);
       return;
     }
@@ -114,7 +114,7 @@ class App {
     <div class="Cont_Info">
     <div class="workout__details">
       <span class="workout__icon">${
-        Workout.type === 'running' ? '🏃‍♂️' : '🚴‍♀️'
+        Workout.type === "running" ? "🏃‍♂️" : "🚴‍♀️"
       }</span>
       <span class="workout__value">${Workout.distance}</span>
       <span class="workout__unit">km</span>
@@ -127,49 +127,49 @@ class App {
     <div class="workout__details">
       <span class="workout__icon">⚡️</span>
       <span class="workout__value">${
-        Workout.type === 'running'
+        Workout.type === "running"
           ? Workout.pace.toFixed(1)
           : Workout.speed.toFixed(1)
       }</span>
       <span class="workout__unit">${
-        Workout.type === 'running' ? 'min/km' : 'km/h'
+        Workout.type === "running" ? "min/km" : "km/h"
       }</span>
     </div>
     <div class="workout__details">
       <span class="workout__icon">${
-        Workout.type === 'running' ? '🦶🏼' : '⛰'
+        Workout.type === "running" ? "🦶🏼" : "⛰"
       }</span>
       <span class="workout__value">${
-        Workout.type === 'running' ? Workout.cadence : Workout.elevationGain
+        Workout.type === "running" ? Workout.cadence : Workout.elevationGain
       }</span>
       <span class="workout__unit">${
-        Workout.type === 'running' ? 'spm' : 'm'
+        Workout.type === "running" ? "spm" : "m"
       }</span>
     </div>
     </div>
   </li>`;
 
-    containerWorkouts.insertAdjacentHTML('beforeend', html);
+    containerWorkouts.insertAdjacentHTML("beforeend", html);
   }
   _setLocalStorage() {
-    localStorage.setItem('workouts', JSON.stringify(this.#workouts));
+    localStorage.setItem("workouts", JSON.stringify(this.#workouts));
   }
   _getLocalStorage() {
-    const data = localStorage.getItem('workouts');
+    const data = localStorage.getItem("workouts");
     if (!data) return;
     this.#workouts = JSON.parse(data);
-    this.#workouts.forEach(workout => this._renderWorkout(workout));
+    this.#workouts.forEach((workout) => this._renderWorkout(workout));
   }
   resetLocalStorage() {
-    localStorage.removeItem('workouts');
+    localStorage.removeItem("workouts");
     location.reload();
   }
   _newWorkout(event) {
     event.preventDefault();
     //helper functions
     const Numbers = (...inputs) =>
-      inputs.every(input => Number.isFinite(input));
-    const positiveNumbers = (...inputs) => inputs.every(input => input > 0);
+      inputs.every((input) => Number.isFinite(input));
+    const positiveNumbers = (...inputs) => inputs.every((input) => input > 0);
     //.................
     const { lat, lng } = this.#mapEvent.latlng;
     // Get data from form
@@ -178,7 +178,7 @@ class App {
     const workoutType = inputType.value;
     let Workout;
     // If workout running, create running object
-    if (workoutType === 'running') {
+    if (workoutType === "running") {
       const cadence = Number(inputCadence.value);
       // Check if data is valid
       if (
@@ -189,7 +189,7 @@ class App {
       Workout = new Running(distance, duration, [lat, lng], cadence);
     }
     // If workout cycling, create cycling object
-    if (workoutType === 'cycling') {
+    if (workoutType === "cycling") {
       const elevation = Number(inputElevation.value);
       if (
         !Numbers(distance, duration, elevation) ||
@@ -209,7 +209,7 @@ class App {
       inputDuration.value =
       inputCadence.value =
       inputElevation.value =
-        '';
+        "";
     // Hide form + clear input fields
     this._hideForm();
     //store the data(all workouts) in the local storage
