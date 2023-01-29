@@ -3,19 +3,20 @@
 <details>
 <summary>Table of content</summary>
 
-- [Description](#description)
-- [Features ✨](#features-)
-- [Screenshots 🖵](#screenshots-)
-- [Project structure](#project-structure)
-- [App Architecture](#app-architecture)
-- [Flowchart Diagram](#flowchart-diagram)
-- [Installation 📥](#installation-)
-- [How to use](#how-to-use)
-- [API used 🧰](#api-used-)
-- [Deployment/Live Demo](#deploymentlive-demo)
-- [Screen record](#screen-record)
-- [Note](#note)
-- [Future Feauters](#future-feauters)
+- [Mapty-App](#mapty-app)
+  - [Description](#description)
+  - [Features ✨](#features-)
+  - [Screenshots 🖵](#screenshots-)
+  - [Project structure](#project-structure)
+  - [App Architecture](#app-architecture)
+  - [Flowchart Diagram](#flowchart-diagram)
+  - [Installation 📥](#installation-)
+  - [How to use](#how-to-use)
+  - [API used 🧰](#api-used-)
+  - [Deployment/Live Demo](#deploymentlive-demo)
+  - [Screen record](#screen-record)
+  - [Note](#note)
+  - [Future Feauters](#future-feauters)
 
 </details>
 
@@ -66,11 +67,7 @@ A map Application where the goal is to organize and track your workouts(running 
  ┃ ┗ 📜style.css
  ┣ 📂imgs
  ┃ ┣ 📜icon.png
- ┃ ┣ 📜logo.png
- ┃ ┣ 📜Mapty-architecture-final.png
- ┃ ┣ 📜Mapty-flowchart.png
- ┃ ┣ 📜Screenshot -1.png
- ┃ ┗ 📜Screenshot -2.png
+ ┃ ┗ 📜logo.png
  ┣ 📂src
  ┃ ┣ 📂workout
  ┃ ┃ ┣ 📜Cycling.js
